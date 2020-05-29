@@ -12,6 +12,11 @@ namespace MachineRent.Context
     {
         public MachineRentContext(DbContextOptions options) : base(options) { }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
+
         public DbSet<Machines> Machines { get; set; }
         public DbSet<Reservations> Reservations { get; set; }
     }
