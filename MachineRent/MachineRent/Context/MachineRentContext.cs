@@ -19,5 +19,6 @@ namespace MachineRent.Context
 
         public DbSet<Machines> Machines { get; set; }
         public DbSet<Reservations> Reservations { get; set; }
+        public DbSet<Shipments> Shipments { get; set; }
     }
 }
