@@ -33,7 +33,6 @@ namespace MachineRent.Services
         {
             return await _context.Machines.OrderBy(machines => machines.Brand).ToListAsync();
         }
-        
 
         public async Task<bool> UpdateAsync(Machines machines)
         {
@@ -48,6 +47,13 @@ namespace MachineRent.Services
                 return false;
             _context.Machines.Remove(machine);
             return await _context.SaveChangesAsync() > 0;
+        }
+
+
+        //TEST
+        public async Task<IList<Machines>> GetAllForUser()
+        {
+            return await _context.Machines.Where(machines => machines.Brand == "JCB" || machines.Brand == "CAT").ToListAsync();
         }
     }
 }
