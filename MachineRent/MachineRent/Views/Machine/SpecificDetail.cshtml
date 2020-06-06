@@ -1,0 +1,57 @@
+﻿@model MachineDetailViewModel
+
+@{
+    ViewBag.Title = "Opis poszczególnego modelu";
+    Layout = "_Layout";
+}
+
+
+    <div class="container desc-div">
+        @*<div class="row shadow p-3 mb-5 bg-white rounded">*@
+            @*<div class="col-12">*@
+            <div>
+                <div>
+                    <p>
+                        <strong>Maszyna:</strong> @Model.Machines.Brand<br />
+                        <strong>Model:</strong> @Model.Machines.Model
+                    </p>
+                    @if (Model.Machines.Brand == "Atlas")
+                    {
+                        <p>
+                            Maszyny Atlas są przystosowane do codziennej pracy...
+                        </p>
+                        <p><img src="~/images/AtlasTEREX.jpg" /></p>
+                        }
+                    @if (Model.Machines.Brand == "JCB")
+                    {
+                        <p>
+                            Wszystkie maszyny JCB są przystosowane na zalewowych terenach...
+                        </p>
+                        @if (Model.Machines.Model == "xp200") {<p><img src="~/images/JCB1.jpg"/></p>}
+                        @if (Model.Machines.Model == "KT-300") {<p><img src="~/images/JCB2.jpg"/></p>}
+                        @if (Model.Machines.Model == "KM-200") {<p><img src="~/images/JCB3.jpg"/></p>}
+                    }
+                    @if (Model.Machines.Brand == "CAT")
+                    {
+                        <p>
+                            Maszyny CAT są przystosowane do pracy w warunkach podziemnych warunkach...
+                        </p>
+                        <p><img src="~/images/excavator.jpg" /></p>
+
+                    }
+                    @if (Model.Machines.Brand == "Liebherr")
+                    {
+                        <p>
+                            Maszyny Liebherr są przystosowane do pracy w codziennych warunkach...
+                        </p>
+                        @if (Model.Machines.Model == "LiTronic") {<p><img src="~/images/Liebherr1.jpg"/></p>}
+                        @if (Model.Machines.Model == "900") {<p><img src="~/images/Liebherr2.jpg"/></p>}
+                        @if (Model.Machines.Model == "880") {<p><img src="~/images/Liebherr3.jpg"/></p>}
+                    }
+                    <div class="form-group">
+                        <a class="btn btn-primary btn-lg" asp-controller="Machine" asp-action="GetAll">Powrót</a>
+                    </div>
+                </div>
+            </div>
+        @*</div>*@
+    </div>

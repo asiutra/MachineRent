@@ -81,5 +81,16 @@ namespace MachineRent.Controllers
             //TODO: 
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> SpecificDetail(int id)
+        {
+            var viewModel = new MachineDetailViewModel()
+            {
+                Machines = await _machinesService.GetAsync(id)
+            };
+
+            return View(viewModel);
+        }
     }
 }
