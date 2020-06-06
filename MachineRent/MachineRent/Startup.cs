@@ -37,7 +37,7 @@ namespace MachineRent
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<MachineRentContext>();
 
             services.AddScoped<IMachinesService, MachinesService>();
-
+            services.AddScoped<IReservationService, ReservationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

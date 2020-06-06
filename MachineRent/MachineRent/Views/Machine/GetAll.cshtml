@@ -27,7 +27,10 @@
                     <td>@machine.Model</td>
                     <td>@machine.HorsePower</td>
                     <td>@machine.CostPerDay</td>
-                    <td>szczegóły</td>
+                    <td>
+                        <a asp-action="FormReservation" asp-controller="Machine" asp-route-id="@machine.MachineId">Zarezerwuj</a>
+                        <a href="#">Szczegóły</a>
+                    </td>
                 </tr>
             }
         </tbody>
