@@ -31,8 +31,9 @@ namespace MachineRent.Services
 
         public async Task<IList<Machines>> GetAllAsync()
         {
-            return await _context.Machines.OrderByDescending(machines => machines.Brand).ToListAsync();
+            return await _context.Machines.OrderBy(machines => machines.Brand).ToListAsync();
         }
+        
 
         public async Task<bool> UpdateAsync(Machines machines)
         {

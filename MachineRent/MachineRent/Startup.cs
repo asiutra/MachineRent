@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MachineRent.Context;
+using MachineRent.Services;
+using MachineRent.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -33,6 +35,9 @@ namespace MachineRent
             services.AddDbContext<MachineRentContext>(builder => builder.UseSqlServer(Configuration.GetConnectionString("SQL")));
 
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<MachineRentContext>();
+
+            services.AddScoped<IMachinesService, MachinesService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

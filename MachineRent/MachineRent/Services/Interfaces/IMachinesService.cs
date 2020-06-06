@@ -6,7 +6,7 @@ using MachineRent.Models;
 
 namespace MachineRent.Services.Interfaces
 {
-    interface IMachinesService
+    public interface IMachinesService
     {
         Task<bool> CreateAsync(Machines machines);
         Task<Machines> GetAsync(int id);
