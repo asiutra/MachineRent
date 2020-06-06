@@ -24,6 +24,23 @@ namespace MachineRent.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Add()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(Machines model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var result = await _machinesService.CreateAsync(model);
+            return View();
+        }
+
+
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var machines = await _machinesService.GetAllAsync();
