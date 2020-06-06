@@ -1,0 +1,38 @@
+﻿@model IList<Machines>
+
+@{
+    ViewBag.Title = "Moje rezerwacje";
+    Layout = "_Layout";
+}
+
+
+<div class="desc-div">
+    <table class="table table-hover table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th>Marka</th>
+                <th>Model</th>
+                <th>BHP</th>
+                <th>Rezerwacja do</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var machine in @Model)
+            {
+                <tr>
+                    <td>@machine.Brand</td>
+                    <td>@machine.Model</td>
+                    <td>@machine.HorsePower</td>
+                    <td>Do kiedy</td>
+                    <td>Usuń rezerwację</td>
+                    @*<td>
+                            <a asp-action="FormReservation" asp-controller="Machine" asp-route-id="@machine.MachineId">Zarezerwuj</a>
+                            <a href="#">Szczegóły</a>
+                        </td>*@
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

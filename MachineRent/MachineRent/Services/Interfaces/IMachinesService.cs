@@ -14,5 +14,7 @@ namespace MachineRent.Services.Interfaces
 
         Task<bool> UpdateAsync(Machines machines);
         Task<bool> DeleteAsync(int id);
+
+        Task<IList<Machines>> GetAllForUser();
     }
 }
