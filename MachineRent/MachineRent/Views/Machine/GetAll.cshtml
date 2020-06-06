@@ -1,0 +1,35 @@
+﻿@*@model IList<MachineRent.Models.Machines>*@
+@model IList<Machines>
+
+@{
+    ViewBag.Title = "Lista maszyn";
+    Layout = "_Layout";
+}
+
+
+<div class="desc-div">
+    <table class="table table-hover table-sm">
+        <thead class="thead-light">
+            <tr>
+                <th>Marka</th>
+                <th>Model</th>
+                <th>BHP</th>
+                <th>Dzienny koszt</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var machine in @Model)
+            {
+                <tr>
+                    <td>@machine.Brand</td>
+                    <td>@machine.Model</td>
+                    <td>@machine.HorsePower</td>
+                    <td>@machine.CostPerDay</td>
+                    <td>szczegóły</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

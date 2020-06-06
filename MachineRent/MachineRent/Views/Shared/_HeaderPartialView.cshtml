@@ -13,7 +13,8 @@
 
             @if (User.Identity.IsAuthenticated)
             {
-                <a class="nav-item nav-link mr-5" href="#">LISTA POJAZDÓW</a>
+                @*<a class="nav-item nav-link mr-5" href="#">LISTA POJAZDÓW</a>*@
+                <a class="nav-item nav-link mr-5" asp-action="GetAll" asp-controller="Machine">LISTA POJAZDÓW</a>
                 <a class="nav-item nav-link mr-5" asp-action="Logout"  asp-controller="Account">WYLOGUJ</a>
             }
 
