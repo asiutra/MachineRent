@@ -30,7 +30,7 @@
                     <td>@machine.CostPerDay</td>
                     <td>
                         <a asp-action="FormReservation" asp-controller="Machine" asp-route-id="@machine.MachineId">Zarezerwuj</a>
-                        <a href="#">Szczegóły</a>
+                        <a asp-action="SpecificDetail" asp-controller="Machine" asp-route-id="@machine.MachineId">Szczegóły</a>
                     </td>
                 </tr>
             }

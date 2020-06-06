@@ -26,7 +26,7 @@ namespace MachineRent.Services
 
         public async Task<Machines> GetAsync(int id)
         {
-            return await _context.Machines.SingleOrDefaultAsync(x => x.MachineId == id);
+            return await _context.Machines.SingleOrDefaultAsync(machine => machine.MachineId == id);
         }
 
         public async Task<IList<Machines>> GetAllAsync()
