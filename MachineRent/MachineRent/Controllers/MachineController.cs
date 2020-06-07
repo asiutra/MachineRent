@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using MachineRent.Models;
 using MachineRent.Models.ViewModels;
 using MachineRent.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MachineRent.Controllers
 {
+    [Authorize]
     public class MachineController : Controller
     {
         private readonly IMachinesService _machinesService;
